@@ -1,0 +1,83 @@
+2026-11-22 16:05:24,445 | INFO     | Sistema Software FJ iniciado
+2026-11-22 16:05:24,446 | INFO     | --- Simulación 01: Cliente válido: Ana Pérez
+2026-11-22 16:05:24,446 | INFO     | Cliente registrado: Cliente #1: Ana Pérez (doc. 1098765432, ana.perez@correo.com, 3101234567)
+2026-11-22 16:05:24,446 | DEBUG    | Fin de registrar_cliente
+2026-11-22 16:05:24,446 | INFO     | --- Simulación 02: Cliente válido: Luis Gómez
+2026-11-22 16:05:24,446 | INFO     | Cliente registrado: Cliente #2: Luis Gómez (doc. 80123456, luis.gomez@empresa.co, 3209998877)
+2026-11-22 16:05:24,446 | DEBUG    | Fin de registrar_cliente
+2026-11-22 16:05:24,446 | INFO     | --- Simulación 03: Cliente INVÁLIDO: correo sin @
+2026-11-22 16:05:24,446 | ERROR    | registrar_cliente: [FJ-101] Correo inválido: 'carlos.correo.com'
+2026-11-22 16:05:24,446 | DEBUG    | Fin de registrar_cliente
+2026-11-22 16:05:24,446 | INFO     | --- Simulación 04: Cliente INVÁLIDO: documento con letras y teléfono corto
+2026-11-22 16:05:24,446 | ERROR    | registrar_cliente: [FJ-101] Documento inválido: '12AB56' (6 a 12 dígitos)
+2026-11-22 16:05:24,446 | DEBUG    | Fin de registrar_cliente
+2026-11-22 16:05:24,446 | INFO     | --- Simulación 05: Cliente con PARÁMETRO FALTANTE (sin email ni teléfono)
+2026-11-22 16:05:24,446 | ERROR    | registrar_cliente: [FJ-103] Datos de cliente incompletos: Cliente.__init__() missing 2 required positional arguments: 'email' and 'telefono' | causa: TypeError("Cliente.__init__() missing 2 required positional arguments: 'email' and 'telefono'")
+2026-11-22 16:05:24,446 | DEBUG    | Fin de registrar_cliente
+2026-11-22 16:05:24,447 | INFO     | --- Simulación 06: Servicio válido: Sala de juntas (capacidad 25)
+2026-11-22 16:05:24,447 | INFO     | Servicio creado: Sala #3 'Sala Ejecutiva' – capacidad 25 personas – $50,000/h
+2026-11-22 16:05:24,447 | DEBUG    | Fin de crear_servicio
+2026-11-22 16:05:24,447 | INFO     | --- Simulación 07: Servicio válido: Alquiler de portátil
+2026-11-22 16:05:24,447 | INFO     | Servicio creado: Equipo #4 'Portátil Pro' (Portátil) – $30,000/h + seguro $15,000
+2026-11-22 16:05:24,447 | DEBUG    | Fin de crear_servicio
+2026-11-22 16:05:24,447 | INFO     | --- Simulación 08: Servicio válido: Asesoría en ciberseguridad (experto)
+2026-11-22 16:05:24,447 | INFO     | Servicio creado: Asesoría #5 'Asesoría Ciberseguridad' – nivel experto – $120,000/h
+2026-11-22 16:05:24,447 | DEBUG    | Fin de crear_servicio
+2026-11-22 16:05:24,447 | INFO     | --- Simulación 09: Servicio INVÁLIDO: tarifa negativa
+2026-11-22 16:05:24,447 | ERROR    | crear_servicio: [FJ-102] Tarifa por hora inválida: -500
+2026-11-22 16:05:24,447 | DEBUG    | Fin de crear_servicio
+2026-11-22 16:05:24,447 | INFO     | --- Simulación 10: Servicio INVÁLIDO: tipo inexistente
+2026-11-22 16:05:24,447 | ERROR    | crear_servicio: [FJ-102] Tipo de servicio desconocido: 'helicoptero'
+2026-11-22 16:05:24,447 | DEBUG    | Fin de crear_servicio
+2026-11-22 16:05:24,447 | INFO     | --- Simulación 11: Reserva EXITOSA: sala 3 h con IVA 19 % y descuento 10 %
+2026-11-22 16:05:24,447 | INFO     | Reserva #6 creada: Ana Pérez -> Sala Ejecutiva (3 h)
+2026-11-22 16:05:24,447 | INFO     | Reserva #6 confirmada
+2026-11-22 16:05:24,447 | INFO     | Reserva #6 procesada. Costo total: $176,715.00
+2026-11-22 16:05:24,447 | DEBUG    | Fin del procesamiento de la reserva #6 (estado: CONFIRMADA)
+2026-11-22 16:05:24,447 | DEBUG    | Fin de crear_reserva (estado: CONFIRMADA)
+2026-11-22 16:05:24,447 | INFO     | --- Simulación 12: Reserva EXITOSA: asesoría 2 h con cupón FJ20
+2026-11-22 16:05:24,447 | INFO     | Reserva #7 creada: Luis Gómez -> Asesoría Ciberseguridad (2 h)
+2026-11-22 16:05:24,447 | INFO     | Reserva #7 confirmada
+2026-11-22 16:05:24,447 | INFO     | Reserva #7 procesada. Costo total: $384,000.00
+2026-11-22 16:05:24,447 | DEBUG    | Fin del procesamiento de la reserva #7 (estado: CONFIRMADA)
+2026-11-22 16:05:24,447 | DEBUG    | Fin de crear_reserva (estado: CONFIRMADA)
+2026-11-22 16:05:24,447 | INFO     | --- Simulación 13: Reserva FALLIDA: horas excesivas (asesoría de 20 h)
+2026-11-22 16:05:24,447 | INFO     | Reserva #8 creada: Ana Pérez -> Asesoría Ciberseguridad (20 h)
+2026-11-22 16:05:24,447 | INFO     | Reserva #8 confirmada
+2026-11-22 16:05:24,447 | DEBUG    | Fin del procesamiento de la reserva #8 (estado: FALLIDA)
+2026-11-22 16:05:24,447 | ERROR    | crear_reserva: [FJ-301] Cálculo inválido en la reserva #8 | causa: ParametroInvalidoError('Horas fuera de rango (1 a 8): 20')
+2026-11-22 16:05:24,447 | DEBUG    | Fin de crear_reserva (estado: FALLIDA)
+2026-11-22 16:05:24,447 | INFO     | --- Simulación 14: Reserva FALLIDA: cupón inexistente
+2026-11-22 16:05:24,447 | INFO     | Reserva #9 creada: Luis Gómez -> Portátil Pro (5 h)
+2026-11-22 16:05:24,447 | INFO     | Reserva #9 confirmada
+2026-11-22 16:05:24,447 | DEBUG    | Fin del procesamiento de la reserva #9 (estado: FALLIDA)
+2026-11-22 16:05:24,447 | ERROR    | crear_reserva: [FJ-301] Cálculo inválido en la reserva #9 | causa: ParametroInvalidoError("Cupón no válido: 'PROMO99'")
+2026-11-22 16:05:24,447 | DEBUG    | Fin de crear_reserva (estado: FALLIDA)
+2026-11-22 16:05:24,447 | INFO     | --- Simulación 15: Reserva FALLIDA: descuento del 150 % (cálculo inconsistente)
+2026-11-22 16:05:24,447 | INFO     | Reserva #10 creada: Ana Pérez -> Portátil Pro (4 h)
+2026-11-22 16:05:24,447 | INFO     | Reserva #10 confirmada
+2026-11-22 16:05:24,447 | DEBUG    | Fin del procesamiento de la reserva #10 (estado: FALLIDA)
+2026-11-22 16:05:24,447 | ERROR    | crear_reserva: [FJ-301] Cálculo inválido en la reserva #10 | causa: CalculoInconsistenteError('Descuento fuera de rango: 1.5')
+2026-11-22 16:05:24,447 | DEBUG    | Fin de crear_reserva (estado: FALLIDA)
+2026-11-22 16:05:24,447 | INFO     | Servicio #4 'Portátil Pro' disponible=False
+2026-11-22 16:05:24,447 | INFO     | --- Simulación 16: Reserva FALLIDA: servicio no disponible
+2026-11-22 16:05:24,447 | INFO     | Reserva #11 creada: Luis Gómez -> Portátil Pro (2 h)
+2026-11-22 16:05:24,447 | DEBUG    | Fin del procesamiento de la reserva #11 (estado: FALLIDA)
+2026-11-22 16:05:24,447 | ERROR    | crear_reserva: [FJ-301] No se pudo procesar la reserva #11 | causa: ServicioNoDisponibleError("El servicio 'Portátil Pro' no está disponible")
+2026-11-22 16:05:24,447 | DEBUG    | Fin de crear_reserva (estado: FALLIDA)
+2026-11-22 16:05:24,447 | INFO     | --- Simulación 17: Reserva FALLIDA: cliente inexistente (None)
+2026-11-22 16:05:24,447 | ERROR    | crear_reserva: [FJ-301] La reserva requiere un cliente válido
+2026-11-22 16:05:24,447 | DEBUG    | Fin de crear_reserva (estado: NO CREADA)
+2026-11-22 16:05:24,447 | INFO     | --- Simulación 18: Reserva EXITOSA y cancelada después
+2026-11-22 16:05:24,447 | INFO     | Reserva #12 creada: Ana Pérez -> Sala Ejecutiva (1 h)
+2026-11-22 16:05:24,447 | INFO     | Reserva #12 confirmada
+2026-11-22 16:05:24,447 | INFO     | Reserva #12 procesada. Costo total: $65,450.00
+2026-11-22 16:05:24,447 | DEBUG    | Fin del procesamiento de la reserva #12 (estado: CONFIRMADA)
+2026-11-22 16:05:24,447 | WARNING  | Reserva #12 cancelada. Motivo: Solicitud del cliente
+2026-11-22 16:05:24,447 | DEBUG    | Fin de crear_reserva (estado: CANCELADA)
+2026-11-22 16:05:24,447 | INFO     | --- Simulación 19: Cancelación INVÁLIDA: la reserva ya estaba cancelada
+2026-11-22 16:05:24,447 | ERROR    | cancelar_reserva: [FJ-302] La reserva #12 ya estaba cancelada
+2026-11-22 16:05:24,447 | DEBUG    | Fin de cancelar_reserva
+2026-11-22 16:05:24,447 | INFO     | --- Simulación 20: Búsqueda de cliente inexistente (error no capturado dentro del método)
+2026-11-22 16:05:24,447 | CRITICAL | Error no previsto en simulación 20: ClienteInvalidoError('No existe un cliente con documento 99999999')
+2026-11-22 16:05:24,447 | INFO     | Simulación finalizada: el sistema continuó estable
